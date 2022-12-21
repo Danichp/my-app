@@ -1,0 +1,67 @@
+.nav {
+    grid-area: nav;
+    background-color: #FFFFFF;
+    justify-content: center;
+    display: flex;
+    padding-top: 50px;
+  
+  }
+  .container-navbar {
+    width: 155px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navigation{
+    min-height: 40px;
+    min-width: 155px;
+    display: block;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    transition: 0.15s;
+    cursor: pointer;
+  }
+  .navigation:hover {
+    background-color: #5570F1;
+  }
+  
+  .nav a, .friendsText{
+    font-weight: 400;
+    font-size: 14px;
+    min-width: 100%; 
+    color: #53545C;
+    margin-left: 20px;
+
+
+  }
+
+  .friendsText {
+    margin-top: 100px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .friendAvatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   
+  }
+  .friends {
+    display: flex;
+  }
+  .friend{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px 0px 0px;
+  }
+  .friendName {
+    font-size: 12px;
+    color: #53545C;
+  }

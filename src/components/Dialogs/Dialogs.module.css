@@ -1,0 +1,104 @@
+
+/*----------------------------HEADER------------------------*/
+.headerText {
+    color: #45464E;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.headerBtn {
+    height: 36px;
+    width: 161px;
+    border-radius: 12px;
+    padding: 17px 16px 17px 16px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: none;
+    background-color: #5570F1;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+
+}
+
+.dialogsHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 17px;
+}
+
+
+/*-------------------------DIALOGS--------------------------*/
+
+.dialogs {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    font-family: 'Inter';
+
+}
+
+.dialogs>* {
+    margin: 0px 17px;
+    background-color: #FFFFFF;
+    height: 75vh;
+    border-radius: 12px;
+}
+
+
+.dialogsItems {
+    padding: 10px;
+
+}
+
+.dialogAvatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.dialogWrapper {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid #F1F3F9;
+}
+
+.dialogWrapper:hover {
+    background-color: #F7F7FC;
+}
+
+.name {
+    margin-left: 15px;
+    color: #45464E;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+/*-------------------------------MESSAGE------------------------*/
+.messages {
+    padding: 10px;
+}
+
+.messageWrapper {
+    display: flex;
+    padding: 15px;
+}
+
+.message {
+    padding: 12px;
+    background-color: #5570F1;
+    color: #FFFFFF;
+    margin-left: 10px;
+    border-radius: 16px 16px 16px 0px;
+    max-width: 350px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
