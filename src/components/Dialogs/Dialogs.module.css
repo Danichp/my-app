@@ -43,7 +43,8 @@
 .dialogs>* {
     margin: 0px 17px;
     background-color: #FFFFFF;
-    height: 75vh;
+    height: 100%;
+    max-height: 75vh;
     border-radius: 12px;
 }
 
@@ -80,7 +81,10 @@
 
 /*-------------------------------MESSAGE------------------------*/
 .messages {
-    padding: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .messageWrapper {

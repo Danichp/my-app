@@ -1,0 +1,34 @@
+.wrapper{
+    align-self: baseline ;
+    height: 50px;
+    border: solid 1px #E1E2E9;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input{
+    border: none;
+    margin-left: 20px;
+    width: 100%;
+    outline: none;
+}
+.send{
+    border: none;
+    display: flex;
+    margin: 0px 10px 0px 10px;
+    align-items: center;
+    padding: 8px 16px 8px 16px;
+    border-radius: 8px;
+    background-color: #FFF2E2;
+}
+.send:hover{
+    cursor: pointer;
+    background-color: #f8e4cc;
+    transition: 0.125s;
+}
+
+.text{
+    margin-right: 8px;
+}
