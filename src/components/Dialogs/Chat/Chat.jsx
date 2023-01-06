@@ -7,15 +7,20 @@ const Chat = (props) => {
 
     let newMessageElement = React.createRef()
 
-    let sendMessage = () => {
-        alert(newMessageElement.current.value);
-        newMessageElement.current.value = ""
+    let addMessage = () => {
+        props.addMessage();
+    }
+
+    let onSendChange = () => {
+        debugger
+        let text = newMessageElement.current.value;
+        props.updateNewSendText(text);
     }
 
     return (
         <div className={classes.wrapper}>
-            <input className={classes.input} type="text" placeholder="Your message" ref={newMessageElement}/>
-            <button onClick={sendMessage} className={classes.send}>
+            <input className={classes.input} type="text" placeholder="Your message" ref={newMessageElement} onChange={onSendChange} value={props.newSendText}/>
+            <button onClick={addMessage} className={classes.send}>
                 <span className={classes.text}>Send</span>
                 <img className={classes.image} src={send} alt="" />
             </button>

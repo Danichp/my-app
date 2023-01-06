@@ -28,7 +28,7 @@
     background-color: #5570F1;
   }
   
-  .nav a, .friendsText{
+  .nav span, .friendsText{
     font-weight: 400;
     font-size: 14px;
     min-width: 100%; 

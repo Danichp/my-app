@@ -1,3 +1,4 @@
+import { rerenderEntireTree } from "../render";
 
 let state = {
 
@@ -6,6 +7,7 @@ let state = {
       { id: 1, message: 'Hi, how are you?', image: 'https://vraki.net/sites/default/files/inline/images/1_6.png', likes: '12' },
       { id: 2, message: 'Its my first post', image: 'https://a.d-cd.net/1a424f2s-960.jpg', likes: '1' }
     ],
+    newPostText: "ahahah"
 
   },
   dialogsPage: {
@@ -25,6 +27,7 @@ let state = {
       { id: 3, message: 'bla bla fuck you' },
     ],
   },
+
   sidebar: [
     { id: 1, name: 'Danya', image: 'https://pixelbox.ru/wp-content/uploads/2021/10/dark-avatar-vk-pixelbox.ru-2.jpg' },
     { id: 2, name: 'Nasya', image: 'https://drasler.ru/wp-content/uploads/2019/05/Скачать-фото-на-аву-с-котами-в-ВК-подборка-аватарок-30.jpg' },
@@ -35,6 +38,8 @@ let state = {
     { id: 7, name: 'Sveta', image: 'https://klike.net/uploads/posts/2018-06/1528377552_15.jpg' },
   ],
 
+  newSendText: "fdgdfg",
+
   
   }
 
@@ -42,12 +47,37 @@ let state = {
 export let addPost = (postMessage) => {
     let newPost = {
       id: 5,
-      message: postMessage,
+      message: state.profilePage.newPostText,
       likes: 4,
       image: "https://a.d-cd.net/1a424f2s-960.jpg"
     };
 
     state.profilePage.postData.push(newPost);
+    state.profilePage.newPostText = "";
+    rerenderEntireTree(state);
 }
 
+export let updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state)
+}
+
+
+
+export let addMessage = () => {
+  let newMessage = {
+    id: 4,
+    message: state.dialogsPage.newSendText
+  }
+
+  state.dialogsPage.messagesData.push(newMessage);
+  state.dialogsPage.newSendText = "";
+  rerenderEntireTree(state);
+}
+
+export let updateNewSendText = (newText) => {
+
+  state.dialogsPage.newSendText = newText;
+  rerenderEntireTree(state);
+}
 export default state
