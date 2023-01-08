@@ -28,7 +28,7 @@ const Dialogs = (props) => {
                     <div>
                         {messagesElements}
                     </div>
-                    <Chat addMessage={props.addMessage} newSendText={props.state.newSendText} updateNewSendText={props.updateNewSendText}/>
+                    <Chat dispatch={props.dispatch} newSendText={props.state.newSendText}/>
                 </div>
             </div>
         </div>
