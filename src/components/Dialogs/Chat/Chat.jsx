@@ -1,4 +1,5 @@
 import React from "react";
+import { addMessageCreator, updateNewSendTextCreator } from "../../../redux/state";
 import classes from "./Chat.module.css"
 import send from "./Send.svg"
 
@@ -8,15 +9,12 @@ const Chat = (props) => {
     let newMessageElement = React.createRef()
 
     let addMessage = () => {
-        props.dispatch({ type: "ADD-MESSAGE" });
+        props.dispatch(addMessageCreator());
     }
 
     let onSendChange = () => {
         let text = newMessageElement.current.value;
-        props.dispatch({
-            type: "UPDATE-NEW-SEND-TEXT",
-            newText: text
-        });
+        props.dispatch(updateNewSendTextCreator(text));
     }
 
     return (
