@@ -1,5 +1,5 @@
 import React from "react";
-import { addMessageCreator, updateNewSendTextCreator } from "../../../redux/state";
+import { addMessageCreator, updateNewSendTextCreator } from "../../../redux/dialogsReducer copy";
 import classes from "./Chat.module.css"
 import send from "./Send.svg"
 

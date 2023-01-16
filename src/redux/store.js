@@ -1,3 +1,7 @@
+import dialogsReducer from "./dialogsReducer copy";
+import profileReducer from "./profileReducer";
+import sidebarReducer from "./sidebarReducer copy"
+
 let store = {
   _state: {
 
@@ -25,6 +29,8 @@ let store = {
         { id: 2, message: 'how are you' },
         { id: 3, message: 'bla bla fuck you' },
       ],
+
+      newSendText: "fdgdfg"
     },
 
     sidebar: [
@@ -37,7 +43,6 @@ let store = {
       { id: 7, name: 'Sveta', image: 'https://klike.net/uploads/posts/2018-06/1528377552_15.jpg' },
     ],
 
-    newSendText: "fdgdfg"
   },
 
   getState() {
@@ -80,62 +85,16 @@ let store = {
     this.rerenderEntireTree(this._state);
   },
   dispatch(action) {
-    if (action.type === 'ADD-POST') {
-      let newPost = {
-        id: 5,
-        message: this._state.profilePage.newPostText,
-        likes: 4,
-        image: "https://a.d-cd.net/1a424f2s-960.jpg"
-      };
+    
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-      this._state.profilePage.postData.push(newPost);
-      this._state.profilePage.newPostText = "";
-      this.rerenderEntireTree(this._state);
-    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-      this._state.profilePage.newPostText = action.newText;
-      this.rerenderEntireTree(this._state);
-    } else if (action.type === "ADD-MESSAGE") {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newSendText
-      }
-
-      this._state.dialogsPage.messagesData.push(newMessage);
-      this._state.dialogsPage.newSendText = "";
-      this.rerenderEntireTree(this._state);
-    } else if (action.type === "UPDATE-NEW-SEND-TEXT"){
-      this._state.dialogsPage.newSendText = action.newText;
-      this.rerenderEntireTree(this._state);
-    }
+    this.rerenderEntireTree(this._state)
   }
 
 }
 
-export const addPostActionCreator = () => {
-  return {
-      type: 'ADD-POST',
-  }
-}
-
-export const updateNewPostTextActionCreator = (text) => {
-  return {
-      type: 'UPDATE-NEW-POST-TEXT',
-      newText: text
-  }
-}
-
-export const addMessageCreator = () => {
-  return {
-      type: 'ADD-MESSAGE',
-  }
-}
-
-export const updateNewSendTextCreator = (text) => {
-  return {
-      type: 'UPDATE-NEW-SEND-TEXT',
-      newText: text
-  }
-}
 
 
 window.store = store
