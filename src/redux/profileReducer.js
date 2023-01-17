@@ -1,4 +1,13 @@
-const profileReducer = (state, action) => {
+
+let initialState = {
+    postData: [
+        { id: 1, message: 'Hi, how are you?', image: 'https://vraki.net/sites/default/files/inline/images/1_6.png', likes: '12' },
+        { id: 2, message: 'Its my first post', image: 'https://a.d-cd.net/1a424f2s-960.jpg', likes: '1' }
+      ],
+      newPostText: "ahahah"
+}
+
+const profileReducer = (state = initialState, action) => {
 
 
     switch(action.type) {
