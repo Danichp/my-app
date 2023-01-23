@@ -1,20 +1,21 @@
 import React from "react";
-import { addMessageCreator, updateNewSendTextCreator } from "../../../redux/dialogsReducer copy";
+import { addMessageCreator, updateNewSendTextCreator } from "../../../redux/dialogsReducer";
 import classes from "./Chat.module.css"
 import send from "./Send.svg"
 
 
 const Chat = (props) => {
+    debugger
 
     let newMessageElement = React.createRef()
 
     let addMessage = () => {
-        props.dispatch(addMessageCreator());
+        props.addMessage();
     }
 
     let onSendChange = () => {
         let text = newMessageElement.current.value;
-        props.dispatch(updateNewSendTextCreator(text));
+        props.updateNewSendText(text)
     }
 
     return (

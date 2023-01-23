@@ -6,20 +6,20 @@ import Post from './Post/Post.jsx'
 
 
 
-const MyPosts = (props) => {
+const MyPost = (props) => {
 
-
-    let postsElements = props.postData.map(p => <Post message={p.message} image={p.image} likes={p.likes} />)
+debugger
+    let postsElements = props.posts.map(p => <Post message={p.message} image={p.image} likes={p.likes} />)
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+    let onAddPost = () => {
+        props.addPost();
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text));
+        props.updateNewPostText(text);
     }
 
     return (
@@ -30,7 +30,7 @@ const MyPosts = (props) => {
                     <div>
                         <textarea ref={newPostElement} onChange={onPostChange} value={props.newPostText} />
                     </div>
-                    <button onClick={addPost}>Add post</button>
+                    <button onClick={onAddPost}>Add post</button>
                 </div>
                 <div className={css.posts}>
                     {postsElements}
@@ -40,4 +40,4 @@ const MyPosts = (props) => {
     )
 }
 
-export default MyPosts;
+export default MyPost;

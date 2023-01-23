@@ -6,9 +6,9 @@ import Chat from "./Chat/Chat";
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.state.dialogsData.map(dialog => <DialogItem id={dialog.id} name={dialog.name} image={dialog.image}/>)
+    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem id={dialog.id} name={dialog.name} image={dialog.image}/>)
 
-    let messagesElements = props.state.messagesData.map(message => <Message id={message.id} message={message.message}/>)
+    let messagesElements = props.dialogsPage.messagesData.map(message => <Message id={message.id} message={message.message}/>)
 
 
 
@@ -28,7 +28,7 @@ const Dialogs = (props) => {
                     <div>
                         {messagesElements}
                     </div>
-                    <Chat dispatch={props.dispatch} newSendText={props.state.newSendText}/>
+                    <Chat  updateNewSendText={props.updateNewSendText} addMessage={props.addMessage} newSendText={props.dialogsPage.newSendText}/>
                 </div>
             </div>
         </div>
