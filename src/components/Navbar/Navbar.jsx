@@ -13,6 +13,7 @@ const Navbar = (props) => {
         <div className="container-navbar">
                 <NavLink className={classes.navigation} to="/profile"><span>Profile</span></NavLink >
                 <NavLink className={classes.navigation} to="/dialogs"><span>Messages</span></NavLink >
+                <NavLink className={classes.navigation} to="/users"><span>Users</span></NavLink >
                 <NavLink className={classes.navigation} to="/news"><span>News</span></NavLink >
                 <NavLink className={classes.navigation} to="/music"><span>Music</span></NavLink >
                 <NavLink className={classes.navigation} to="/settings"><span>Settings</span></NavLink >
