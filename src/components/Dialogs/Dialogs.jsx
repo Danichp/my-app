@@ -6,9 +6,9 @@ import Chat from "./Chat/Chat";
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem id={dialog.id} name={dialog.name} image={dialog.image}/>)
+    let dialogsElements = props.dialogsPage.dialogsData.map(dialog => <DialogItem id={dialog.id} name={dialog.name} key={dialog.id} image={dialog.image}/>)
 
-    let messagesElements = props.dialogsPage.messagesData.map(message => <Message id={message.id} message={message.message}/>)
+    let messagesElements = props.dialogsPage.messagesData.map(message => <Message id={message.id} key={message.id} message={message.message}/>)
 
 
 
