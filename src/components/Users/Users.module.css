@@ -4,3 +4,7 @@
 .wrapper {
     margin-bottom: 35px;
 }
+
+.selectedPage{
+    font-weight: bold;
+}
