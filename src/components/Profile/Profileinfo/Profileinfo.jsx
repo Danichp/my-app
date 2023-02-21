@@ -20,19 +20,22 @@ const ProfileInfo = (props) => {
                 <div className={classes.info}>
                     <div className={classes.fullName}>{props.profile.fullName}</div>
                     <div className={classes.aboutMe}>{props.profile.aboutMe}</div>
-                    <div className={classes.contacts}>
+                    <div className={classes.contacts}> Contacts
                         <ul>
-                            <li>{props.profile.contacts.facebook != null ? props.profile.contacts.facebook : null }</li>
-                            <li>{props.profile.contacts.website != null ? props.profile.contacts.website : null }</li>
-                            <li>{props.profile.contacts.vk != null ? props.profile.contacts.vk : null }</li>
-                            <li>{props.profile.contacts.twitter != null ? props.profile.contacts.twitter : null }</li>
-                            <li>{props.profile.contacts.instagram != null ? props.profile.contacts.instagram : null }</li>
-                            <li>{props.profile.contacts.youtube != null ? props.profile.contacts.youtube : null }</li>
-                            <li>{props.profile.contacts.github != null ? props.profile.contacts.github : null }</li>
-                            <li>{props.profile.contacts.mainLink != null ? props.profile.contacts.mainLink : null }</li>
+                            {props.profile.contacts.facebook != null ? <li>{props.profile.contacts.facebook}</li> : null }
+                            {props.profile.contacts.website != null ? <li>{props.profile.contacts.website}</li> : null }
+                            {props.profile.contacts.vk != null ? <li>{props.profile.contacts.vk}</li> : null }
+                            {props.profile.contacts.twitter != null ? <li>{props.profile.contacts.twitter}</li> : null }
+                            {props.profile.contacts.instagram != null ? <li>{props.profile.contacts.instagram}</li> : null }
+                            {props.profile.contacts.youtube != null ? <li>{props.profile.contacts.youtube}</li> : null }
+                            {props.profile.contacts.github != null ? <li>{props.profile.contacts.github}</li> : null }
+                            {props.profile.contacts.mainLink != null ? <li>{props.profile.contacts.mainLink}</li> : null }
                         </ul>
                     </div>
-                    <div className={classes.job}></div>
+                    <div className={classes.job}>
+                        <div className={classes.lookingForAJob}>looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+                        <div className={classes.lookingForAJobDescription}>{props.profile.lookingForAJobDescription != null ? props.profile.lookingForAJobDescription : null}</div>
+                    </div>
                 </div>
             </div>
         </div>

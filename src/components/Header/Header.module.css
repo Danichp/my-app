@@ -3,6 +3,8 @@
     background-color:  #FFFFFF;
     display: flex;
     align-items: center;
+    width: 100%;
+    grid-column: 1 / 4;
   }
   
  .title {
@@ -15,5 +17,14 @@
     height: 50px;
     vertical-align: auto;
     padding: 0px 15px 0px 35px;
+  }
+
+  .loginBlock{
+    float: right;
+    margin-left: 700px;
+  }
+
+  .loginBlock a{
+    color: black;
   }
   
