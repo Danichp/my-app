@@ -11,7 +11,7 @@ function getRandomNumber (props) {
 const Navbar = (props) => {
     return <nav className={classes.nav}>
         <div className="container-navbar">
-                <NavLink className={classes.navigation} to="/profile"><span>Profile</span></NavLink >
+                <NavLink className={classes.navigation} to="/profile/:userId"><span>Profile</span></NavLink >
                 <NavLink className={classes.navigation} to="/dialogs"><span>Messages</span></NavLink >
                 <NavLink className={classes.navigation} to="/users"><span>Users</span></NavLink >
                 <NavLink className={classes.navigation} to="/news"><span>News</span></NavLink >

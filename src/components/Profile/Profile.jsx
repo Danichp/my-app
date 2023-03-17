@@ -3,6 +3,8 @@ import MyPostsContainer from "./MyPosts/MyPostContainer.jsx";
 import ProfileInfo from "./Profileinfo/Profileinfo";
 
 const Profile = (props) => {
+
+
     return (
     <div>
         <ProfileInfo profile={props.profile}/>
