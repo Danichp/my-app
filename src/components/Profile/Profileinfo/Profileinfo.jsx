@@ -1,6 +1,7 @@
 import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import classes from './Profileinfo.module.css'
+import ProfileStatus from "./ProfileStatus"
 
 
 const ProfileInfo = (props) => {
@@ -10,17 +11,15 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div>
-                <img className={classes.image} src='https://c.wallhere.com/photos/dd/2c/landscape_nature_mountains_river_forest-142711.jpg!d'></img>
-            </div>
             <div className={classes.descriptionBlock}>
                 <div className={classes.avatar}>
                     <img src={props.profile.photos.large} alt="" />
                 </div>
                 <div className={classes.info}>
                     <div className={classes.fullName}>{props.profile.fullName}</div>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                     <div className={classes.aboutMe}>{props.profile.aboutMe}</div>
-                    <div className={classes.contacts}> Contacts
+                    <div className={classes.contacts}> Contacts 
                         <ul>
                             {props.profile.contacts.facebook != null ? <li>{props.profile.contacts.facebook}</li> : null }
                             {props.profile.contacts.website != null ? <li>{props.profile.contacts.website}</li> : null }
@@ -33,7 +32,7 @@ const ProfileInfo = (props) => {
                         </ul>
                     </div>
                     <div className={classes.job}>
-                        <div className={classes.lookingForAJob}>looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+                        <div className={classes.lookingForAJob}> looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
                         <div className={classes.lookingForAJobDescription}>{props.profile.lookingForAJobDescription != null ? props.profile.lookingForAJobDescription : null}</div>
                     </div>
                 </div>
