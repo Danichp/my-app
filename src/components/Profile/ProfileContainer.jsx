@@ -3,20 +3,18 @@ import Profile from "./Profile.jsx";
 import { getProfile, getStatus, updateStatus } from "../../redux/profileReducer"
 import { connect } from "react-redux";
 import {
-    Navigate,
     useLocation,
     useNavigate,
     useParams,
 } from "react-router-dom";
-import { withAuthRedirect } from "../../hoc/withAuthRedirect.js";
 import { compose } from "redux";
 
 class ProfileContainer extends React.Component {
 
-    componentDidMount() {
-        let userId = this.props.router.params.userId
+    componentDidMount() { 
         debugger
-        if (!userId) {
+        let userId = +this.props.router.params.userId
+        if (userId == NaN) {
             userId = 27800;
         }
         this.props.getProfile(userId)
@@ -58,6 +56,5 @@ function withRouter(Component) {
 
 export default compose(
     connect(mapStateToProps,  {getProfile, getStatus, updateStatus}),
-    withRouter,
-    //withAuthRedirect
+    withRouter
 )(ProfileContainer);

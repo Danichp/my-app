@@ -14,9 +14,8 @@ let initialState = {
         { id: 1, message: 'Hi' },
         { id: 2, message: 'how are you' },
         { id: 3, message: 'bla bla fuck you' },
-      ],
+      ]
 
-      newSendText: "fdgdfg"
 }
 
 
@@ -25,18 +24,11 @@ let initialState = {
 const dialogsReducer = (state = initialState, action) => {
     switch(action.type){
         case "ADD-MESSAGE": {
-            let text = state.newSendText
+            let text = action.newMessageBody
             return {
                 ...state,
-                newSendText: "",
                 messagesData: [...state.messagesData, {id: 4, message: text}]
             }
-        }
-        case "UPDATE-NEW-SEND-TEXT":{
-           return {
-            ...state,
-            newSendText: action.newText
-           }
         }
         default:
             return state
@@ -45,17 +37,13 @@ const dialogsReducer = (state = initialState, action) => {
         
 }
 
-export const addMessageCreator = () => {
+export const addMessageCreator = (newMessageBody) => {
     return {
         type: 'ADD-MESSAGE',
+        newMessageBody
     }
   }
   
-  export const updateNewSendTextCreator = (text) => {
-    return {
-        type: 'UPDATE-NEW-SEND-TEXT',
-        newText: text
-    }
-  }
+
 
 export default dialogsReducer

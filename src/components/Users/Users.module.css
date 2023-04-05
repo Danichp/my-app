@@ -8,3 +8,18 @@
 .selectedPage{
     font-weight: bold;
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.pages{
+    display: flex;
+    margin-right: 20px;
+    width: 400px;
+    justify-content: space-between;
+}
+.users{
+    padding: 10px 30px;
+}
