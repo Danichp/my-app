@@ -14,7 +14,7 @@ class ProfileContainer extends React.Component {
     componentDidMount() { 
         debugger
         let userId = +this.props.router.params.userId
-        if (userId == NaN) {
+        if (isNaN(userId)) {
             userId = 27800;
         }
         this.props.getProfile(userId)
