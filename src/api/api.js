@@ -57,14 +57,10 @@ export const authAPI = {
             
         });
     },
-    authLogin(email, password, rememberMe){
-        return instance.post(`auth/login`, {
-            email: email,
-            password: password,
-            rememberMe: rememberMe
-        })
-        .then(response => {
-            return response.data
-        })
+    authLogin(email, password, rememberMe = false, captcha){
+        return instance.post(`auth/login`, {email, password, rememberMe, captcha})
+    },
+    authLogout(){
+        return instance.delete(`auth/login`)
     }
 }
